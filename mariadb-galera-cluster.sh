@@ -38,15 +38,15 @@ CLUSTER_STRING="gcomm://"$(IFS=, ; echo "${CLUSTER_IP[*]}")
 
 sudo echo '[galera]
 wsrep_on                 = ON
-wsrep_cluster_name       = \"'$CLUSTER_NAME'\"
+wsrep_cluster_name       = "'$CLUSTER_NAME'"
 wsrep_provider           = /usr/lib/galera/libgalera_smm.so
-wsrep_cluster_address    = \"'$CLUSTER_STRING'\"
+wsrep_cluster_address    = "'$CLUSTER_STRING'"
 binlog_format            = row
 default_storage_engine   = InnoDB
 innodb_autoinc_lock_mode = 2
 bind-address = 0.0.0.0
-wsrep_node_address=\"'$NODE_IP'\"
-wsrep_node_name=\"'$NODE_NAME'\"' > $MARIADB_GALERA_CONF
+wsrep_node_address="'$NODE_IP'"
+wsrep_node_name="'$NODE_NAME'"' > $MARIADB_GALERA_CONF
 
 sudo galera_new_cluster
 sudo systemctl restart mariadb 
