@@ -51,5 +51,3 @@ wsrep_node_name="'$NODE_NAME'"' > $MARIADB_GALERA_CONF
 sudo galera_new_cluster
 sudo systemctl restart mariadb 
 
-sudo service mysql stop
-sudo service mysql start --wsrep-new-cluster
