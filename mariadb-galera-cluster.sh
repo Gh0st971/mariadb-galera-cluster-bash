@@ -51,8 +51,5 @@ wsrep_node_name=\"'$NODE_NAME'\"' > $MARIADB_GALERA_CONF
 sudo galera_new_cluster
 sudo systemctl restart mariadb 
 
-wsrep_node_address=\"'$IP'\"
-wsrep_node_name=\"'$IP'\"' > /etc/mysql/conf.d/cluster.cnf"
-
-sudo service mysql stop"
+sudo service mysql stop
 sudo service mysql start --wsrep-new-cluster
